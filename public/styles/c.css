@@ -1,0 +1,29 @@
+.over{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    opacity: 0; height: 100%;
+     width: 100%; 
+     border-radius: 100%;
+     transition: opacity ease 0.5s;
+}
+.form1{
+    display: flex;
+    flex-direction: column;
+}
+.over:hover{
+    opacity: 0.5;
+}
+i{
+    color: #ffffff;
+    font-size: 50px;
+}
+.avatar{
+    background-color: white;
+    font-weight: bolder;
+    width: 250px;
+    border-radius: 60px;
+    border: none;
+    color: black,
+}

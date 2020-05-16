@@ -1,0 +1,18 @@
+extends ../layout.pug
+block content
+    h1 Add your title and description in box (^^)
+    form#form(action='/books/add', method='POST',enctype="multipart/form-data")
+      lable Title
+      br
+      input#input(type='text', name='tl').form-control
+      br
+      lable description
+      textarea(name='description', form='form', rows='4', cols='50').form-control Enter text here...
+      br
+      lable Price
+      input#input(type='text', name='price').form-control
+      br
+      lable Image
+      input#input(type='file', name='image').form-control-file
+
+      button#bts.btn.btn-primary.mt-1 Create Book

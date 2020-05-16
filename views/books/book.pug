@@ -1,0 +1,43 @@
+extends ../layout.pug
+block content
+        h1  Books
+        form(action="/books/find", method="GET")
+          .row.pl-3.pr-3
+            input#input(type='text', name='q').form-control.mb-2
+            button#bts.btn.btn-primary.mb-5  Find
+          .row
+            each title in titles
+              .col-sm-4.mb-4
+                .card(style='width: 21rem;')
+                  img.card-img-top(src=title.image, alt='Card image cap', style='height:200px; width: 100%;')
+                  .card-body
+                    h5.card-title=title.tl
+                    p.text-truncate=title.description
+                    div
+                      div(style='display: flex;justify-content: flex-end;')
+                        a(href="/books/detail/" +title._id) Detail
+                      div
+                        a.btn.btn-primary(href="/cart/add/"+title._id) Add cart
+        nav(aria-label='Page navigation example')
+          ul.pagination.justify-content-end
+            li.page-item
+              a.page-link(href='/books?page=1') Start
+            li.page-item
+              a.page-link(href='/books?page='+parseInt(page-1)) Previous
+            li.page-item
+              a.page-link(href='/books?page='+parseInt(page)) #{page}
+            li.page-item
+              a.page-link(href='/books?page='+parseInt(page+1)) #{page+1}
+            li.page-item
+              a.page-link(href='/books?page='+parseInt(page+2)) #{page+2}
+            li.page-item
+              a.page-link(href='/books?page='+parseInt(page+3)) Next
+            li.page-item
+              a.page-link(href='/books?page=12') Last                   
+          script.
+            var input = document.getElementById("input");
+            var button = document.getElementById("bts");
+            button.addEventListener("click", function(){
+            sessionStorage.setItem("d1", input.value)
+            });
+            input.value=sessionStorage.getItem("d1");

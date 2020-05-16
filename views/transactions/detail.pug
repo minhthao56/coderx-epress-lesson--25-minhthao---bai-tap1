@@ -1,0 +1,28 @@
+extends ../layout.pug
+block content
+    h1 Detail transaction
+    p 
+      b User:
+      br
+      span=objUser.name
+      br
+      br
+      b Titile book:
+      ol
+        each book in books
+          li=book.tl
+      br
+      b Time borrow:
+      br
+      span=objTrans.timeb
+      br
+      if objTrans.isComplete==="true"
+        br
+        b Status:
+        br
+        span Hoàn thành
+      if objTrans.isComplete==="false"
+        br
+        b Status:
+        br
+        span Chưa trả

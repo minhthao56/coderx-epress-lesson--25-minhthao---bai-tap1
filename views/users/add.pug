@@ -1,0 +1,23 @@
+extends ../layout.pug
+block content
+    h1 Create Your User(^^)
+    if err
+      .alert.alert-danger=err
+
+    form#form(action='/users/add', method='POST',enctype="multipart/form-data")
+      input#input(type='text', name='isAdmin' value ="false", style="display: none;")
+      input#input(type='text', name='wrongLoginCount' value = 0, style="display: none;")
+      lable Name
+      br
+      input#input(type='text', name='name').form-control
+      br
+      lable Email
+      input#input(type='text', name='email').form-control
+      br
+      lable Password
+      input#input(type='text', name='pass').form-control
+      br
+      lable Avarta
+      input#input(type='file', name='avatarUrl').form-control-file
+
+      button#bts.btn.btn-primary.mt-1 Create user

@@ -1,0 +1,17 @@
+extends ../layout.pug
+block content
+    h1 Detail User
+    .form
+      form.form1(action='')
+        input#file.inputfile(type='file', name='file', style='display: none;')
+        label(for='file', style='background-image: url('+user.avatarUrl+'); border-radius: 100%; background-size: contain; height: 250px; width: 250px;')
+          .over
+            i.fas.fa-camera
+        button.avatar Update Avatar
+      hr
+      p
+        b Name
+        |  : #{user.name}
+      p
+        b Email
+        |  : #{user.email}
