@@ -9,7 +9,7 @@ var transactionsRouters = require("./routes/transactions.route");
 var authRouters = require("./routes/login.router");
 var cartRouters = require("./routes/cart.route");
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/express-js-coderx',
+mongoose.connect(process.env.MONGODB_URI,
  {useUnifiedTopology: true,useNewUrlParser: true});
 
 
